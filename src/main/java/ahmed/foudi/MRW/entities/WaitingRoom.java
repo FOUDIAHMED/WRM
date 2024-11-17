@@ -5,6 +5,7 @@ import lombok.Data;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,5 +19,8 @@ public class WaitingRoom {
     private String algorithme;
     @Column(nullable = false)
     private  int capacity;
+
+    @OneToMany(mappedBy = "waitingList" , fetch = FetchType.EAGER)
+    private List<Visit> visits;
 
 }

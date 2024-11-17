@@ -29,4 +29,5 @@ public class Visit {
     private byte priority;
     private Duration estimatedProcessTime;
 
+
 }
