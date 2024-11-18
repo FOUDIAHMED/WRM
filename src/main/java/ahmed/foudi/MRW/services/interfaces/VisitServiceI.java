@@ -7,9 +7,11 @@ import java.util.List;
 
 public interface VisitServiceI {
     VisiteResponseDTO save(VisitRequestDTO visitRequestDTO);
-    VisiteResponseDTO update(VisitRequestDTO visitRequestDTO);
-    VisiteResponseDTO delete(VisitRequestDTO visitRequestDTO);
-    VisiteResponseDTO find(Long id);
+    VisiteResponseDTO update(Long visitorId, Long waitingRoomId, VisitRequestDTO visitRequestDTO);
+    VisiteResponseDTO delete(Long visitorId, Long waitingRoomId);
+    VisiteResponseDTO find(Long visitorId, Long waitingRoomId);
     List<VisiteResponseDTO> findAll();
+    List<VisiteResponseDTO> findByVisitorId(Long visitorId);
+    List<VisiteResponseDTO> findByWaitingRoomId(Long waitingRoomId);
 
 }

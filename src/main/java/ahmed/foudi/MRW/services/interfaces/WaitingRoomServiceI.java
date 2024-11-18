@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface WaitingRoomServiceI {
     WaitingRoomResponseDTO save(WaitingRoomRequestDTO requestDTO);
-    WaitingRoomResponseDTO update(WaitingRoomRequestDTO requestDTO);
+    WaitingRoomResponseDTO update(Long id,WaitingRoomRequestDTO requestDTO);
     WaitingRoomResponseDTO delete(Long  id);
     WaitingRoomResponseDTO findById(Long id);
     List<WaitingRoomResponseDTO> findAll();

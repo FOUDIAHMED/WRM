@@ -26,9 +26,9 @@ public class WaitingRoomServiceImpl implements WaitingRoomServiceI {
     }
 
     @Override
-    public WaitingRoomResponseDTO update(WaitingRoomRequestDTO requestDTO) {
-        if (!waitingRoomDAO.existsById(requestDTO.getId())) {
-            throw new WaitingRoomNotFoundException("WaitingRoom not found with id: " + requestDTO.getId());
+    public WaitingRoomResponseDTO update(Long id,WaitingRoomRequestDTO requestDTO) {
+        if (!waitingRoomDAO.existsById(id)) {
+            throw new WaitingRoomNotFoundException("WaitingRoom not found with id: " + id);
         }
         WaitingRoom waitingRoom = waitingRoomMapper.toEntity(requestDTO);
         return waitingRoomMapper.toDto(waitingRoomDAO.save(waitingRoom));

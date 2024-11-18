@@ -2,7 +2,6 @@ package ahmed.foudi.MRW.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
 import java.util.List;

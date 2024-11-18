@@ -6,6 +6,7 @@ import ahmed.foudi.MRW.dao.WaitingRoomDAO;
 import ahmed.foudi.MRW.dto.visitdto.VisitRequestDTO;
 import ahmed.foudi.MRW.dto.visitdto.VisiteResponseDTO;
 import ahmed.foudi.MRW.entities.Visit;
+import ahmed.foudi.MRW.entities.EmbdedId;
 import ahmed.foudi.MRW.exceptions.visit.VisitNotFoundException;
 import ahmed.foudi.MRW.exceptions.visitor.VisitorNotFoundException;
 import ahmed.foudi.MRW.exceptions.waitingroom.WaitingRoomNotFoundException;
@@ -35,30 +36,67 @@ public class VisitServiceImpl implements VisitServiceI {
     }
 
     @Override
-    public VisiteResponseDTO update(VisitRequestDTO visitRequestDTO) {
+    public VisiteResponseDTO update(Long visitorId, Long waitingRoomId, VisitRequestDTO visitRequestDTO) {
+        EmbdedId embeddedId = new EmbdedId();
+        embeddedId.setVisitorId(visitorId);
+        embeddedId.setWaitingRoomId(waitingRoomId);
+
+        if (!visitDAO.existsById(embeddedId)) {
+            throw new VisitNotFoundException("Visit not found with visitorId: " + visitorId + 
+                " and waitingRoomId: " + waitingRoomId);
+        }
+
         validateVisitorAndWaitingRoom(visitRequestDTO);
         Visit visit = visitMapper.toEntity(visitRequestDTO);
+        visit.setId(embeddedId);
         visit.setVisitor(visitorDAO.getReferenceById(visitRequestDTO.getVisitorId()));
         visit.setWaitingRoom(waitingRoomDAO.getReferenceById(visitRequestDTO.getWaitingRoomId()));
+        
         return visitMapper.toDto(visitDAO.save(visit));
     }
 
     @Override
-    public VisiteResponseDTO delete(VisitRequestDTO visitRequestDTO) {
-        Visit visit = visitMapper.toEntity(visitRequestDTO);
+    public VisiteResponseDTO delete(Long visitorId, Long waitingRoomId) {
+        EmbdedId embeddedId = new EmbdedId();
+        embeddedId.setVisitorId(visitorId);
+        embeddedId.setWaitingRoomId(waitingRoomId);
+
+        Visit visit = visitDAO.findById(embeddedId)
+                .orElseThrow(() -> new VisitNotFoundException("Visit not found with visitorId: " + 
+                    visitorId + " and waitingRoomId: " + waitingRoomId));
+        
         visitDAO.delete(visit);
         return visitMapper.toDto(visit);
     }
 
     @Override
-    public VisiteResponseDTO find(Long id) {
-        return visitMapper.toDto(visitDAO.findById(id)
-                .orElseThrow(() -> new VisitNotFoundException("Visit not found with id: " + id)));
+    public VisiteResponseDTO find(Long visitorId, Long waitingRoomId) {
+        EmbdedId embeddedId = new EmbdedId();
+        embeddedId.setVisitorId(visitorId);
+        embeddedId.setWaitingRoomId(waitingRoomId);
+
+        return visitMapper.toDto(visitDAO.findById(embeddedId)
+                .orElseThrow(() -> new VisitNotFoundException("Visit not found with visitorId: " + 
+                    visitorId + " and waitingRoomId: " + waitingRoomId)));
     }
 
     @Override
     public List<VisiteResponseDTO> findAll() {
         return visitDAO.findAll().stream()
+                .map(visitMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<VisiteResponseDTO> findByVisitorId(Long visitorId) {
+        return visitDAO.findByVisitorId(visitorId).stream()
+                .map(visitMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<VisiteResponseDTO> findByWaitingRoomId(Long waitingRoomId) {
+        return visitDAO.findByWaitingRoomId(waitingRoomId).stream()
                 .map(visitMapper::toDto)
                 .collect(Collectors.toList());
     }
