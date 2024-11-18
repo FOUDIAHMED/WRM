@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface VisitorServiceI {
     VisitorResponseDTO save(VisitorRequestDTO visitorRequestDTO);
-    VisitorResponseDTO update(VisitorRequestDTO visitorRequestDTO);
+    VisitorResponseDTO update(Long id,VisitorRequestDTO visitorRequestDTO);
     VisitorResponseDTO delete(Long id);
     VisitorResponseDTO find(Long id);
     List<VisitorResponseDTO> findAll();
