@@ -2,6 +2,7 @@ C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controller\VisitCo
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controller\VisitorController.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controller\WaitingRoomController.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dao\VisitDAO.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dao\VisitorDAO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dao\WaitingRoomDAO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dto\visitdto\VisitEmbddedDTO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dto\visitdto\VisiteResponseDTO.java
@@ -17,8 +18,14 @@ C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\Status.ja
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\Visit.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\Visitor.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\WaitingRoom.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\mapper\EmbeddedIdMapper.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\mapper\VisitMapper.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\mapper\VisitorMapper.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\mapper\WaitingRoomMapper.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\MrwApplication.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\impl\VisitorServiceImpl.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\impl\VisitServiceImpl.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\impl\WaitingRoomServiceImpl.java
-C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\VisitServiceI.java
-C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\WaitingRoomServiceI.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\interfaces\VisitorServiceI.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\interfaces\VisitServiceI.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\services\interfaces\WaitingRoomServiceI.java
