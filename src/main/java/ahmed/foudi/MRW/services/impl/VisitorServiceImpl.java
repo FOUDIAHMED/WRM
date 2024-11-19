@@ -30,8 +30,10 @@ public class VisitorServiceImpl implements VisitorServiceI {
         if (!visitorDAO.existsById(id)) {
             throw new VisitorNotFoundException("Visitor not found with id: " + id);
         }
-        Visitor visitor = visitorMapper.toEntity(visitorRequestDTO);
-        return visitorMapper.toDto(visitorDAO.save(visitor));
+        Visitor savedVisitor=visitorDAO.findById(id).get();
+        savedVisitor.setFirstName(visitorRequestDTO.getFirstName());
+        savedVisitor.setLastName(visitorRequestDTO.getLastName());
+        return visitorMapper.toDto(visitorDAO.save(savedVisitor));
     }
 
     @Override

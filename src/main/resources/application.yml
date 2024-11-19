@@ -2,7 +2,7 @@ spring:
   application:
     name: MRW
   profiles:
-    active: dev
+    active: prod
 ---
 spring:
   config:
