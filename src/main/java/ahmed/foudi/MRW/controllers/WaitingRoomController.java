@@ -35,7 +35,7 @@ public class WaitingRoomController {
 
     @GetMapping("/{id}")
     public ResponseEntity<WaitingRoomResponseDTO> getWaitingRoom(@PathVariable Long id) {
-        return ResponseEntity.ok(waitingRoomService.find(id));
+        return ResponseEntity.ok(waitingRoomService.findById(id));
     }
 
     @GetMapping

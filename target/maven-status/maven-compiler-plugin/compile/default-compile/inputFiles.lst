@@ -1,9 +1,13 @@
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controller\VisitController.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controller\VisitorController.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controller\WaitingRoomController.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controllers\VisitController.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controllers\VisitorController.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\controllers\WaitingRoomController.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dao\VisitDAO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dao\VisitorDAO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dao\WaitingRoomDAO.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dto\error\ErrorDTO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dto\visitdto\VisitEmbddedDTO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dto\visitdto\VisiteResponseDTO.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\dto\visitdto\VisitRequestDTO.java
@@ -18,6 +22,10 @@ C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\Status.ja
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\Visit.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\Visitor.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\entities\WaitingRoom.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\exceptions\GlobalExceptionHandler.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\exceptions\visit\VisitNotFoundException.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\exceptions\visitor\VisitorNotFoundException.java
+C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\exceptions\waitingroom\WaitingRoomNotFoundException.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\mapper\EmbeddedIdMapper.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\mapper\VisitMapper.java
 C:\Users\safiy\IdeaProjects\MRW\src\main\java\ahmed\foudi\MRW\mapper\VisitorMapper.java

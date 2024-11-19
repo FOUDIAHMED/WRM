@@ -19,7 +19,7 @@ public class WaitingRoom {
     @Column(nullable = false)
     private  int capacity;
 
-    @OneToMany(mappedBy = "waitingList" , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "waitingRoom" , fetch = FetchType.EAGER)
     private List<Visit> visits;
 
 }
