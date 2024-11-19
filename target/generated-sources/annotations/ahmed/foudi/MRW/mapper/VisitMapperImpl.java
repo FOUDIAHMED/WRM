@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-11-18T01:36:24+0100",
-    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.3 (Oracle Corporation)"
+    date = "2024-11-19T09:25:46+0100",
+    comments = "version: 1.6.2, compiler: Eclipse JDT (IDE) 3.40.0.z20241023-1306, environment: Java 17.0.13 (Eclipse Adoptium)"
 )
 @Component
 public class VisitMapperImpl implements VisitMapper {
@@ -31,11 +31,11 @@ public class VisitMapperImpl implements VisitMapper {
         Visit visit = new Visit();
 
         visit.setId( visitRequestDTOToEmbdedId( dto ) );
-        visit.setStartTime( dto.getStartTime() );
         visit.setEndTime( dto.getEndTime() );
-        visit.setStatus( dto.getStatus() );
-        visit.setPriority( dto.getPriority() );
         visit.setEstimatedProcessTime( dto.getEstimatedProcessTime() );
+        visit.setPriority( dto.getPriority() );
+        visit.setStartTime( dto.getStartTime() );
+        visit.setStatus( dto.getStatus() );
 
         return visit;
     }
@@ -51,11 +51,11 @@ public class VisitMapperImpl implements VisitMapper {
         visiteResponseDTO.setId( embdedIdToVisitEmbddedDTO( entity.getId() ) );
         visiteResponseDTO.setVisitor( visitorMapper.toEmbeddedDto( entity.getVisitor() ) );
         visiteResponseDTO.setWaitingRoom( waitingRoomMapper.toEmbeddedDto( entity.getWaitingRoom() ) );
-        visiteResponseDTO.setStartTime( entity.getStartTime() );
         visiteResponseDTO.setEndTime( entity.getEndTime() );
-        visiteResponseDTO.setStatus( entity.getStatus() );
-        visiteResponseDTO.setPriority( entity.getPriority() );
         visiteResponseDTO.setEstimatedProcessTime( entity.getEstimatedProcessTime() );
+        visiteResponseDTO.setPriority( entity.getPriority() );
+        visiteResponseDTO.setStartTime( entity.getStartTime() );
+        visiteResponseDTO.setStatus( entity.getStatus() );
 
         return visiteResponseDTO;
     }

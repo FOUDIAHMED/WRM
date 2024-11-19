@@ -17,8 +17,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-11-18T01:36:24+0100",
-    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.3 (Oracle Corporation)"
+    date = "2024-11-19T09:25:47+0100",
+    comments = "version: 1.6.2, compiler: Eclipse JDT (IDE) 3.40.0.z20241023-1306, environment: Java 17.0.13 (Eclipse Adoptium)"
 )
 @Component
 public class WaitingRoomMapperImpl implements WaitingRoomMapper {
@@ -31,9 +31,9 @@ public class WaitingRoomMapperImpl implements WaitingRoomMapper {
 
         WaitingRoom waitingRoom = new WaitingRoom();
 
-        waitingRoom.setDate( dto.getDate() );
         waitingRoom.setAlgorithme( dto.getAlgorithme() );
         waitingRoom.setCapacity( dto.getCapacity() );
+        waitingRoom.setDate( dto.getDate() );
 
         return waitingRoom;
     }
@@ -46,10 +46,10 @@ public class WaitingRoomMapperImpl implements WaitingRoomMapper {
 
         WaitingRoomResponseDTO waitingRoomResponseDTO = new WaitingRoomResponseDTO();
 
-        waitingRoomResponseDTO.setId( entity.getId() );
-        waitingRoomResponseDTO.setDate( entity.getDate() );
         waitingRoomResponseDTO.setAlgorithme( entity.getAlgorithme() );
         waitingRoomResponseDTO.setCapacity( entity.getCapacity() );
+        waitingRoomResponseDTO.setDate( entity.getDate() );
+        waitingRoomResponseDTO.setId( entity.getId() );
         waitingRoomResponseDTO.setVisits( visitListToVisiteResponseDTOList( entity.getVisits() ) );
 
         return waitingRoomResponseDTO;
@@ -63,10 +63,10 @@ public class WaitingRoomMapperImpl implements WaitingRoomMapper {
 
         WaitingRoomEmbddedDTO waitingRoomEmbddedDTO = new WaitingRoomEmbddedDTO();
 
-        waitingRoomEmbddedDTO.setId( entity.getId() );
-        waitingRoomEmbddedDTO.setDate( entity.getDate() );
         waitingRoomEmbddedDTO.setAlgorithme( entity.getAlgorithme() );
         waitingRoomEmbddedDTO.setCapacity( entity.getCapacity() );
+        waitingRoomEmbddedDTO.setDate( entity.getDate() );
+        waitingRoomEmbddedDTO.setId( entity.getId() );
 
         return waitingRoomEmbddedDTO;
     }
@@ -91,8 +91,8 @@ public class WaitingRoomMapperImpl implements WaitingRoomMapper {
 
         VisitorEmbddedDTO visitorEmbddedDTO = new VisitorEmbddedDTO();
 
-        visitorEmbddedDTO.setId( visitor.getId() );
         visitorEmbddedDTO.setFirstName( visitor.getFirstName() );
+        visitorEmbddedDTO.setId( visitor.getId() );
         visitorEmbddedDTO.setLastName( visitor.getLastName() );
 
         return visitorEmbddedDTO;
@@ -105,14 +105,14 @@ public class WaitingRoomMapperImpl implements WaitingRoomMapper {
 
         VisiteResponseDTO visiteResponseDTO = new VisiteResponseDTO();
 
+        visiteResponseDTO.setEndTime( visit.getEndTime() );
+        visiteResponseDTO.setEstimatedProcessTime( visit.getEstimatedProcessTime() );
         visiteResponseDTO.setId( embdedIdToVisitEmbddedDTO( visit.getId() ) );
+        visiteResponseDTO.setPriority( visit.getPriority() );
+        visiteResponseDTO.setStartTime( visit.getStartTime() );
+        visiteResponseDTO.setStatus( visit.getStatus() );
         visiteResponseDTO.setVisitor( visitorToVisitorEmbddedDTO( visit.getVisitor() ) );
         visiteResponseDTO.setWaitingRoom( toEmbeddedDto( visit.getWaitingRoom() ) );
-        visiteResponseDTO.setStartTime( visit.getStartTime() );
-        visiteResponseDTO.setEndTime( visit.getEndTime() );
-        visiteResponseDTO.setStatus( visit.getStatus() );
-        visiteResponseDTO.setPriority( visit.getPriority() );
-        visiteResponseDTO.setEstimatedProcessTime( visit.getEstimatedProcessTime() );
 
         return visiteResponseDTO;
     }
