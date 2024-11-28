@@ -21,6 +21,7 @@ public class VisitorServiceImpl implements VisitorServiceI {
 
     @Override
     public VisitorResponseDTO save(VisitorRequestDTO visitorRequestDTO) {
+        
         Visitor visitor = visitorMapper.toEntity(visitorRequestDTO);
         return visitorMapper.toDto(visitorDAO.save(visitor));
     }
@@ -31,8 +32,13 @@ public class VisitorServiceImpl implements VisitorServiceI {
             throw new VisitorNotFoundException("Visitor not found with id: " + id);
         }
         Visitor savedVisitor=visitorDAO.findById(id).get();
-        savedVisitor.setFirstName(visitorRequestDTO.getFirstName());
-        savedVisitor.setLastName(visitorRequestDTO.getLastName());
+        if(visitorRequestDTO.getFirstName()!=null) {
+            savedVisitor.setFirstName(visitorRequestDTO.getFirstName());
+        }
+        if(visitorRequestDTO.getLastName()!=null) {
+            savedVisitor.setLastName(visitorRequestDTO.getLastName());
+        }
+
         return visitorMapper.toDto(visitorDAO.save(savedVisitor));
     }
 

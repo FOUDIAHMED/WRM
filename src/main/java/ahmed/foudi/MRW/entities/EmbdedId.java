@@ -12,7 +12,7 @@ public class EmbdedId {
     @Column(name = "visitor_id")
     Long visitorId;
 
-    @Column(name = "waitingRoomId")
+    @Column(name = "waiting_room_id")
     Long waitingRoomId;
 
 

@@ -1,5 +1,6 @@
 package ahmed.foudi.MRW.services;
 
+import ahmed.foudi.MRW.dto.visitdto.VisitRequestDTO;
 import ahmed.foudi.MRW.dto.visitdto.VisiteResponseDTO;
 import ahmed.foudi.MRW.entities.EmbdedId;
 import ahmed.foudi.MRW.entities.Visit;
@@ -32,11 +33,13 @@ public class VisitServiceIntegrationTest {
 //    @Test
 //    void shouldCreateVisit() {
 //        // Given
-//        Visit visit = new Visit();
+//        VisitRequestDTO visit = new VisitRequestDTO();
 //        EmbdedId embdedId = new EmbdedId();
 //        embdedId.setVisitorId(1L);
 //        embdedId.setWaitingRoomId(1L);
 //        visit.setId(embdedId);
+//        VisitRequestDTO visitRequestDTO = new VisitRequestDTO();
+//        visitRequestDTO.setVisitorId();
 //
 //
 //        // Set other required fields...

@@ -7,7 +7,6 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 @Entity
-
 @Data
 public class Visit {
     @EmbeddedId
@@ -20,14 +19,18 @@ public class Visit {
 
     @ManyToOne
     @MapsId("waitingRoomId")
-    @JoinColumn(name = "waitingRoomId")
+    @JoinColumn(name = "waiting_room_id")
     private WaitingRoom waitingRoom;
 
+    @Column(nullable = false)
     private LocalDateTime startTime;
+    
     private LocalDateTime endTime;
+    
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Status status;
+    
     private byte priority;
     private Duration estimatedProcessTime;
-
-
 }

@@ -9,4 +9,3 @@ services:
       MYSQL_DATABASE: wrm
     ports:
       - "3306:3306"
-

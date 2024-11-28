@@ -7,6 +7,8 @@ import ahmed.foudi.MRW.dto.visitdto.VisitRequestDTO;
 import ahmed.foudi.MRW.dto.visitdto.VisiteResponseDTO;
 import ahmed.foudi.MRW.entities.Visit;
 import ahmed.foudi.MRW.entities.EmbdedId;
+import ahmed.foudi.MRW.entities.Visitor;
+import ahmed.foudi.MRW.entities.WaitingRoom;
 import ahmed.foudi.MRW.exceptions.visit.VisitNotFoundException;
 import ahmed.foudi.MRW.exceptions.visitor.VisitorNotFoundException;
 import ahmed.foudi.MRW.exceptions.waitingroom.WaitingRoomNotFoundException;
@@ -29,9 +31,15 @@ public class VisitServiceImpl implements VisitServiceI {
     @Override
     public VisiteResponseDTO save(VisitRequestDTO visitRequestDTO) {
         validateVisitorAndWaitingRoom(visitRequestDTO);
+        Visitor visitor=visitorDAO.findById(visitRequestDTO.getVisitorId()).get();
+        WaitingRoom waitingRoom=waitingRoomDAO.findById(visitRequestDTO.getWaitingRoomId()).get();
         Visit visit = visitMapper.toEntity(visitRequestDTO);
-        visit.setVisitor(visitorDAO.getReferenceById(visitRequestDTO.getVisitorId()));
-        visit.setWaitingRoom(waitingRoomDAO.getReferenceById(visitRequestDTO.getWaitingRoomId()));
+        EmbdedId id=new EmbdedId();
+        id.setWaitingRoomId(waitingRoom.getId());
+        id.setVisitorId(visitor.getId());
+        visit.setId(id);
+        visit.setVisitor(visitor);
+        visit.setWaitingRoom(waitingRoom);
         return visitMapper.toDto(visitDAO.save(visit));
     }
 
@@ -60,6 +68,7 @@ public class VisitServiceImpl implements VisitServiceI {
         EmbdedId embeddedId = new EmbdedId();
         embeddedId.setVisitorId(visitorId);
         embeddedId.setWaitingRoomId(waitingRoomId);
+
 
         Visit visit = visitDAO.findById(embeddedId)
                 .orElseThrow(() -> new VisitNotFoundException("Visit not found with visitorId: " + 

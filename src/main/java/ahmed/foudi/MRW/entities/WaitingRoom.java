@@ -16,8 +16,8 @@ public class WaitingRoom {
     private LocalDate date;
     @Column(nullable = false)
     private String algorithme;
-    @Column(nullable = false)
-    private  int capacity;
+    @Column(nullable = false, columnDefinition = "integer default 50")
+    private int capacity;
 
     @OneToMany(mappedBy = "waitingRoom" , fetch = FetchType.EAGER)
     private List<Visit> visits;

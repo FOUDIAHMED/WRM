@@ -21,6 +21,7 @@ public class WaitingRoomServiceImpl implements WaitingRoomServiceI {
 
     @Override
     public WaitingRoomResponseDTO save(WaitingRoomRequestDTO requestDTO) {
+        
         WaitingRoom waitingRoom = waitingRoomMapper.toEntity(requestDTO);
         return waitingRoomMapper.toDto(waitingRoomDAO.save(waitingRoom));
     }

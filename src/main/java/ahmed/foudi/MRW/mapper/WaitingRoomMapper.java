@@ -8,9 +8,7 @@ import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
 public interface WaitingRoomMapper {
-    
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "visits", ignore = true)
+
     WaitingRoom toEntity(WaitingRoomRequestDTO dto);
     
     WaitingRoomResponseDTO toDto(WaitingRoom entity);

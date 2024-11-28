@@ -23,6 +23,11 @@ spring:
   h2:
     console:
       enabled: true
+  waiting:
+    room:
+      default:
+        algorithm: FIFO
+        capacity: 50
 ---
 spring:
   config:
@@ -40,3 +45,8 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+  waiting:
+    room:
+      default:
+        algorithm: FIFO
+        capacity: 10

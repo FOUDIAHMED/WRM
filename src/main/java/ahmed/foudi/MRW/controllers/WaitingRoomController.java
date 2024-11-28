@@ -2,6 +2,7 @@ package ahmed.foudi.MRW.controllers;
 
 import ahmed.foudi.MRW.dto.waitingroomDTO.WaitingRoomRequestDTO;
 import ahmed.foudi.MRW.dto.waitingroomDTO.WaitingRoomResponseDTO;
+import ahmed.foudi.MRW.services.interfaces.WaitingRoomServiceI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/waiting-rooms")
 @RequiredArgsConstructor
 public class WaitingRoomController {
-    private final WaitingRoomServiceImpl waitingRoomService;
+    private final WaitingRoomServiceI waitingRoomService;
 
     @PostMapping
     public ResponseEntity<WaitingRoomResponseDTO> createWaitingRoom(@RequestBody WaitingRoomRequestDTO waitingRoomRequest) {

@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(VisitorNotFoundException.class)
     public ResponseEntity<ErrorDTO> handleVisitorNotFoundException(VisitorNotFoundException ex, WebRequest request) {
-        return buildErrorResponse(ex.getMessage(), request, HttpStatus.NOT_FOUND);
+        return buildErrorResponse(ex.getMessage(), request, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(WaitingRoomNotFoundException.class)
