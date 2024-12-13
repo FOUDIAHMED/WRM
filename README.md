@@ -40,77 +40,69 @@ WRM (Waiting Room Management) is a centralized API service designed to efficient
 - Swagger for API documentation
 
 ## Project Structure
-+---src
-ª   +---main
-ª   ª   +---java
-ª   ª   ª   +---ahmed
-ª   ª   ª       +---foudi
-ª   ª   ª           +---MRW
-ª   ª   ª               +---config
-ª   ª   ª               +---controllers
-ª   ª   ª               +---dao
-ª   ª   ª               +---dto
-ª   ª   ª               ª   +---error
-ª   ª   ª               ª   +---visitdto
-ª   ª   ª               ª   +---visitorDTO
-ª   ª   ª               ª   +---waitingroomDTO
-ª   ª   ª               +---entities
-ª   ª   ª               +---exceptions
-ª   ª   ª               ª   +---visit
-ª   ª   ª               ª   +---visitor
-ª   ª   ª               ª   +---waitingroom
-ª   ª   ª               +---mapper
-ª   ª   ª               +---services
-ª   ª   ª                   +---impl
-ª   ª   ª                   +---interfaces
-ª   ª   +---resources
-ª   ª       +---static
-ª   ª       +---templates
-ª   +---test
-ª       +---java
-ª       ª   +---ahmed
-ª       ª       +---foudi
-ª       ª           +---MRW
-ª       ª               +---services
-ª       +---resources
-+---target
-    +---classes
-    ª   +---ahmed
-    ª       +---foudi
-    ª           +---MRW
-    ª               +---config
-    ª               +---controllers
-    ª               +---dao
-    ª               +---dto
-    ª               ª   +---error
-    ª               ª   +---visitdto
-    ª               ª   +---visitorDTO
-    ª               ª   +---waitingroomDTO
-    ª               +---entities
-    ª               +---exceptions
-    ª               ª   +---visit
-    ª               ª   +---visitor
-    ª               ª   +---waitingroom
-    ª               +---mapper
-    ª               +---services
-    ª                   +---impl
-    ª                   +---interfaces
-    +---generated-sources
-    ª   +---annotations
-    ª       +---ahmed
-    ª           +---foudi
-    ª               +---MRW
-    ª                   +---mapper
-    +---generated-test-sources
-    ª   +---test-annotations
-    +---maven-archiver
-    +---maven-status
-    ª   +---maven-compiler-plugin
-    ª       +---compile
-    ª       ª   +---default-compile
-    ª       +---testCompile
-    ª           +---default-testCompile
-    +---test-classes
+src
+ └── main
+      └── java
+           └── ahmed
+                └── foudi
+                     └── MRW
+                          └── config
+                          └── controllers
+                          └── dao
+                          └── dto
+                               └── error
+                               └── visitdto
+                               └── visitorDTO
+                               └── waitingroomDTO
+                          └── entities
+                          └── exceptions
+                               └── visit
+                               └── visitor
+                               └── waitingroom
+                          └── mapper
+                          └── services
+                               └── impl
+                               └── interfaces
+      └── resources
+           └── static
+           └── templates
+ └── test
+      └── java
+           └── ahmed
+                └── foudi
+                     └── MRW
+                          └── services
+      └── resources
+ └── target
+      └── classes
+           └── ahmed
+                └── foudi
+                     └── MRW
+                          └── config
+                          └── controllers
+                          └── dao
+                          └── dto
+                          └── entities
+                          └── exceptions
+                          └── mapper
+                          └── services
+      └── generated-sources
+           └── annotations
+                └── ahmed
+                     └── foudi
+                          └── MRW
+                               └── mapper
+           └── generated-test-sources
+                └── test-annotations
+           └── maven-archiver
+           └── maven-status
+                └── maven-compiler-plugin
+                     └── compile
+                          └── default-compile
+                          └── testCompile
+                               └── default-testCompile
+                └── test-classes
+
 
 ## Setup and Installation
 1. Clone the repository
